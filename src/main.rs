@@ -9,10 +9,10 @@ async fn greet(req: HttpRequest) -> impl Responder {
 async fn main () -> std::io::Result<()> {
     HttpServer::new(|| {
         App::new()
-            .route("/",web::get().to(greetings))
+            .route("/",web::get().to(greet))
             .route("/{name}", web::get().to(greet))
     })
-      .blind("127.0.0.1:8000")?
+      .bind("127.0.0.1:8000")?
       .run()
       .await
 }
@@ -31,4 +31,3 @@ mod tests {
         assert!(response.status().is_success())
     }
 }
-
