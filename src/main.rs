@@ -2,5 +2,5 @@ use Newsletter::run;
 
 #[tokio::main]
 async fn main() -> std::io::Result<()> {
-    run().await?.await
+    run(std::net::TcpListener)?.await
 }
