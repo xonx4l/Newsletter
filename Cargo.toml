@@ -20,3 +20,4 @@ name = "Newsletter"
 actix-web = "4"
 tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
 reqwest = "0.11"
+serde = "1.0.208"
